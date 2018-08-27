@@ -1,29 +1,28 @@
+package soot;
 
-/* Soot - a J*va Optimization Framework
+/*-
+ * #%L
+ * Soot - a J*va Optimization Framework
+ * %%
  * Copyright (C) 2004 Ondrej Lhotak
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
+ * %%
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation, either version 2.1 of the
+ * License, or (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
- *
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Lesser Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Lesser Public
+ * License along with this program.  If not, see
+ * <http://www.gnu.org/licenses/lgpl-2.1.html>.
+ * #L%
  */
 
 /* THIS FILE IS AUTO-GENERATED FROM soot_options.xml. DO NOT MODIFY. */
-
-package soot;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import soot.*;
 import org.apache.tools.ant.*;
@@ -35,9 +34,8 @@ import java.util.*;
  * Soot ant task.
  * @author Ondrej Lhotak
  */
-@javax.annotation.Generated(value = "Saxonica v3.0", date = "2018-02-27T12:47:11.925+01:00", comments = "from soot_options.xml")
+@javax.annotation.Generated(value = "Saxonica v3.0", date = "2018-08-13T11:30:58.271+02:00", comments = "from soot_options.xml")
 public class AntTask extends MatchingTask {
-    private static final Logger logger = LoggerFactory.getLogger(AntTask.class);
     public static final boolean DEBUG = true;
     private void debug(String s) {
         if(DEBUG) System.err.println(s);
@@ -105,7 +103,7 @@ public class AntTask extends MatchingTask {
             soot.Main.main((String[]) args.toArray(new String[0]));
             soot.G.v().reset();
         } catch( Exception e ) {
-            logger.error(e.getMessage(), e);
+            e.printStackTrace();
             throw new BuildException(e);
         }
     }
@@ -116,8 +114,8 @@ public class AntTask extends MatchingTask {
             if(arg) addArg("-coffi");
         }
   
-        public void setasm_backend(boolean arg) {
-            if(arg) addArg("-asm-backend");
+        public void setjasmin_backend(boolean arg) {
+            if(arg) addArg("-jasmin-backend");
         }
   
         public void sethelp(boolean arg) {
@@ -267,6 +265,10 @@ public class AntTask extends MatchingTask {
             if(arg) addArg("-allow-phantom-refs");
         }
   
+        public void setallow_phantom_elms(boolean arg) {
+            if(arg) addArg("-allow-phantom-elms");
+        }
+  
         public void setno_bodies_for_excluded(boolean arg) {
             if(arg) addArg("-no-bodies-for-excluded");
         }
@@ -368,6 +370,10 @@ public class AntTask extends MatchingTask {
   
         public void setoutput_jar(boolean arg) {
             if(arg) addArg("-output-jar");
+        }
+  
+        public void sethierarchy_dirs(boolean arg) {
+            if(arg) addArg("-hierarchy-dirs");
         }
   
         public void setxml_attributes(boolean arg) {
@@ -1305,6 +1311,12 @@ public class AntTask extends MatchingTask {
             addArg("-p");
             addArg("cg");
             addArg("types-for-invoke:"+(arg?"true":"false"));
+          }
+      
+          public void setresolve_all_abstract_invokes(boolean arg) {
+            addArg("-p");
+            addArg("cg");
+            addArg("resolve-all-abstract-invokes:"+(arg?"true":"false"));
           }
       
           public void setlibrary(String arg) {

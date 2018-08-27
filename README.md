@@ -35,7 +35,7 @@ a dependency via Maven, Gradle, SBT, etc using the following coordinates:
   <dependency>
     <groupId>ca.mcgill.sable</groupId>
     <artifactId>soot</artifactId>
-    <version>3.0.0-SNAPSHOT</version>
+    <version>3.1.0-SNAPSHOT</version>
   </dependency>
 </dependencies>
 <repositories>
@@ -67,6 +67,10 @@ Soot follows the git-flow convention. Releases and hotfixes are maintained in th
 Development happens in the develop branch. To catch the bleeding edge of Soot, check out the latter.
 In case of any questions, please consult the Soot
 mailing list at: http://www.sable.mcgill.ca/mailman/listinfo/soot-list/
+
+# How do I contribute to Soot?
+
+We are happy to accept arbitrary improvements to Soot in form of GitHub pull requests. Please read our [contribution guidelines](https://github.com/Sable/soot/wiki/Contributing-to-Soot) before setting up a pull request.
 
 # What extensions exist to Soot?
 
